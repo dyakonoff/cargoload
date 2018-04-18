@@ -4,5 +4,6 @@
     <persistence-unit name="cargoload"
                       transaction-type="RESOURCE_LOCAL">
         <class>io.dyakonoff.cargoload.entity.Ship</class>
+        <class>io.dyakonoff.cargoload.entity.CargoBay</class>
     </persistence-unit>
 </persistence>

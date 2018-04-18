@@ -3,4 +3,6 @@
     <include file="io/dyakonoff/cargoload/screens.xml"/>
     <screen id="cargoload$Ship.edit"
             template="io/dyakonoff/cargoload/web/ship/ship-edit.xml"/>
+    <screen id="cargoload$CargoBay.browse"
+            template="io/dyakonoff/cargoload/web/cargobay/cargo-bay-browse.xml"/>
 </screen-config>

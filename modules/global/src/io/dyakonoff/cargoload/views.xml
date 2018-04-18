@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
-
+    <view class="io.dyakonoff.cargoload.entity.CargoBay"
+          extends="_minimal"
+          name="cargoBay-view">
+        <property name="maxLoad"/>
+    </view>
+    <view class="io.dyakonoff.cargoload.entity.CargoBay"
+          extends="_local"
+          name="cargoBay-edit">
+        <property name="ship"
+                  view="_minimal"/>
+    </view>
 </views>
