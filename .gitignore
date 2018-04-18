@@ -7,6 +7,7 @@ build/*
 deploy/*
 !deploy/tomcat/work/app-core/filestorage/*
 !deploy/hsqldb
+deploy/hsqldb/cargoload/cargoload.lck
 modules/*/build/*
 out
 test-run
