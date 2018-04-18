@@ -20,7 +20,8 @@
             <column width="250px">
                 <field property="name"/>
                 <field property="shipType"/>
-                <field property="tonnage"/>
+                <field caption="Carrying capacity"
+                       property="carryingCapacity"/>
             </column>
         </fieldGroup>
         <frame id="windowActions"

@@ -6,22 +6,19 @@
   -->
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
         caption="msg://caption"
-        class="io.dyakonoff.cargoload.web.cargobay.CargoBayBrowse"
+        class="io.dyakonoff.cargoload.web.product.ProductBrowse"
         focusComponent="table"
         lookupComponent="table"
-        messagesPack="io.dyakonoff.cargoload.web.cargobay">
+        messagesPack="io.dyakonoff.cargoload.web.product">
     <dsContext>
-        <datasource id="cargoBayDs"
-                    class="io.dyakonoff.cargoload.entity.CargoBay"
-                    view="cargoBay-edit">
-            <datasource id="shipDs"
-                        property="ship"/>
-        </datasource>
-        <groupDatasource id="cargoBaysDs"
-                         class="io.dyakonoff.cargoload.entity.CargoBay"
-                         view="cargoBay-view">
+        <datasource id="productDs"
+                    class="io.dyakonoff.cargoload.entity.Product"
+                    view="_local"/>
+        <groupDatasource id="productsDs"
+                         class="io.dyakonoff.cargoload.entity.Product"
+                         view="_minimal">
             <query>
-                <![CDATA[select e from cargoload$CargoBay e]]>
+                <![CDATA[select e from cargoload$Product e]]>
             </query>
         </groupDatasource>
     </dsContext>
@@ -52,7 +49,7 @@
                   spacing="true">
                 <filter id="filter"
                         applyTo="table"
-                        datasource="cargoBaysDs">
+                        datasource="productsDs">
                     <properties include=".*"/>
                 </filter>
                 <groupTable id="table"
@@ -64,10 +61,8 @@
                     </actions>
                     <columns>
                         <column id="name"/>
-                        <column id="bayNumber"/>
-                        <column id="maxLoad"/>
                     </columns>
-                    <rows datasource="cargoBaysDs"/>
+                    <rows datasource="productsDs"/>
                     <rowsCount/>
                     <buttonsPanel id="buttonsPanel"
                                   alwaysVisible="true">
@@ -87,15 +82,12 @@
                   spacing="true">
                 <scrollBox id="fieldGroupBox">
                     <fieldGroup id="fieldGroup"
-                                datasource="cargoBayDs">
+                                datasource="productDs">
                         <column width="250px">
                             <field property="name"/>
-                            <field property="ship"/>
-                            <field property="bayNumber"/>
-                            <field property="maxLoad"/>
-                            <field property="bayArea"/>
-                            <field property="foreAndAftPosition"/>
-                            <field property="athwartshipPosition"/>
+                            <field property="measure"/>
+                            <field property="weightPerUnit"/>
+                            <field property="pricePerUnit"/>
                         </column>
                     </fieldGroup>
                 </scrollBox>

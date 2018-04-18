@@ -4,6 +4,7 @@
           extends="_minimal"
           name="cargoBay-view">
         <property name="maxLoad"/>
+        <property name="bayNumber"/>
     </view>
     <view class="io.dyakonoff.cargoload.entity.CargoBay"
           extends="_local"

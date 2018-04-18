@@ -7,9 +7,9 @@ import javax.annotation.Nullable;
 
 public enum PositionLengthwise implements EnumClass<Integer> {
 
-    Fore(10),
-    Midship(0),
-    Aft(-10);
+    Fore(0),
+    Midship(10),
+    Aft(20);
 
     private Integer id;
 

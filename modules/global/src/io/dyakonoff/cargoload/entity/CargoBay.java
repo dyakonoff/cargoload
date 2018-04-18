@@ -31,6 +31,9 @@ public class CargoBay extends StandardEntity {
     @JoinColumn(name = "SHIP_ID")
     protected Ship ship;
 
+    @Column(name = "BAY_NUMBER", unique = true)
+    protected Integer bayNumber;
+
     @Column(name = "MAX_LOAD")
     protected BigDecimal maxLoad;
 
@@ -44,6 +47,15 @@ public class CargoBay extends StandardEntity {
     @NotNull
     @Column(name = "ATHWARTSHIP_POSITION", nullable = false)
     protected Integer athwartshipPosition;
+
+    public void setBayNumber(Integer bayNumber) {
+        this.bayNumber = bayNumber;
+    }
+
+    public Integer getBayNumber() {
+        return bayNumber;
+    }
+
 
     public void setBayArea(BigDecimal bayArea) {
         this.bayArea = bayArea;

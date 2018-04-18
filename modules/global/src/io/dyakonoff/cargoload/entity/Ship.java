@@ -22,8 +22,17 @@ public class Ship extends StandardEntity {
     protected String shipType;
 
     @NotNull
-    @Column(name = "TONNAGE", nullable = false)
-    protected BigDecimal tonnage;
+    @Column(name = "CARRYING_CAPACITY", nullable = false)
+    protected BigDecimal carryingCapacity;
+
+    public void setCarryingCapacity(BigDecimal carryingCapacity) {
+        this.carryingCapacity = carryingCapacity;
+    }
+
+    public BigDecimal getCarryingCapacity() {
+        return carryingCapacity;
+    }
+
 
     public void setName(String name) {
         this.name = name;
@@ -39,14 +48,6 @@ public class Ship extends StandardEntity {
 
     public String getShipType() {
         return shipType;
-    }
-
-    public void setTonnage(BigDecimal tonnage) {
-        this.tonnage = tonnage;
-    }
-
-    public BigDecimal getTonnage() {
-        return tonnage;
     }
 
 

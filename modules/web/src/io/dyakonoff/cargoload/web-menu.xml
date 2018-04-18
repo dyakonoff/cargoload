@@ -6,5 +6,6 @@
               openType="DIALOG"
               screen="cargoload$Ship.edit"/>
         <item screen="cargoload$CargoBay.browse"/>
+        <item screen="cargoload$Product.browse"/>
     </menu>
 </menu-config>

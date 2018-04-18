@@ -5,4 +5,6 @@
             template="io/dyakonoff/cargoload/web/ship/ship-edit.xml"/>
     <screen id="cargoload$CargoBay.browse"
             template="io/dyakonoff/cargoload/web/cargobay/cargo-bay-browse.xml"/>
+    <screen id="cargoload$Product.browse"
+            template="io/dyakonoff/cargoload/web/product/product-browse.xml"/>
 </screen-config>

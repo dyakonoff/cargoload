@@ -5,15 +5,15 @@ import com.haulmont.chile.core.datatypes.impl.EnumClass;
 import javax.annotation.Nullable;
 
 
-public enum PositionAthwartship implements EnumClass<Integer> {
+public enum ProductMeasure implements EnumClass<Integer> {
 
-    Larboard(0),
-    Midship(10),
-    Starboard(20);
+    Unit(10),
+    kilogram(20),
+    ton(30);
 
     private Integer id;
 
-    PositionAthwartship(Integer value) {
+    ProductMeasure(Integer value) {
         this.id = value;
     }
 
@@ -22,8 +22,8 @@ public enum PositionAthwartship implements EnumClass<Integer> {
     }
 
     @Nullable
-    public static PositionAthwartship fromId(Integer id) {
-        for (PositionAthwartship at : PositionAthwartship.values()) {
+    public static ProductMeasure fromId(Integer id) {
+        for (ProductMeasure at : ProductMeasure.values()) {
             if (at.getId().equals(id)) {
                 return at;
             }

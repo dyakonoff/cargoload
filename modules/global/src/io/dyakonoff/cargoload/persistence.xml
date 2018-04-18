@@ -5,5 +5,8 @@
                       transaction-type="RESOURCE_LOCAL">
         <class>io.dyakonoff.cargoload.entity.Ship</class>
         <class>io.dyakonoff.cargoload.entity.CargoBay</class>
+        <class>io.dyakonoff.cargoload.entity.Product</class>
+        <class>io.dyakonoff.cargoload.entity.CargoSku</class>
+        <class>io.dyakonoff.cargoload.entity.CargoLoadingScheme</class>
     </persistence-unit>
 </persistence>
