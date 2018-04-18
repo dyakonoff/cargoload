@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
-
     <include file="io/dyakonoff/cargoload/screens.xml"/>
-
+    <screen id="cargoload$Ship.edit"
+            template="io/dyakonoff/cargoload/web/ship/ship-edit.xml"/>
 </screen-config>
