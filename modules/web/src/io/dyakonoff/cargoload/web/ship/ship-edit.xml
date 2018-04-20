@@ -19,7 +19,7 @@
                     datasource="shipDs">
             <column width="250px">
                 <field property="name"/>
-                <field property="shipType"/>
+                <field property="shipType" />
                 <field caption="Carrying capacity"
                        property="carryingCapacity"/>
             </column>

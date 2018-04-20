@@ -79,8 +79,9 @@ create table CARGOLOAD_CARGO_SKU (
     primary key (ID)
 )^
 -- end CARGOLOAD_CARGO_SKU
--- begin CARGOLOAD_CARGO_LOADING_SCHEME
-create table CARGOLOAD_CARGO_LOADING_SCHEME (
+
+-- begin CARGOLOAD_CARGO_ITEM_POSITION
+create table CARGOLOAD_CARGO_ITEM_POSITION (
     ID varchar(36) not null,
     VERSION integer not null,
     CREATE_TS timestamp,
@@ -93,7 +94,24 @@ create table CARGOLOAD_CARGO_LOADING_SCHEME (
     SKU_ID varchar(36) not null,
     BAY_ID varchar(36) not null,
     COUNT_TO_LOAD integer not null,
+    SHIP_LOADING_SCHEME_ID varchar(36) not null,
     --
     primary key (ID)
 )^
--- end CARGOLOAD_CARGO_LOADING_SCHEME
+-- end CARGOLOAD_CARGO_ITEM_POSITION
+-- begin CARGOLOAD_SHIP_LOADING_SCHEME
+create table CARGOLOAD_SHIP_LOADING_SCHEME (
+    ID varchar(36) not null,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    NAME varchar(100) not null,
+    --
+    primary key (ID)
+)^
+-- end CARGOLOAD_SHIP_LOADING_SCHEME

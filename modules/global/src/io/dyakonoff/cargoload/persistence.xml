@@ -7,6 +7,7 @@
         <class>io.dyakonoff.cargoload.entity.CargoBay</class>
         <class>io.dyakonoff.cargoload.entity.Product</class>
         <class>io.dyakonoff.cargoload.entity.CargoSku</class>
-        <class>io.dyakonoff.cargoload.entity.CargoLoadingScheme</class>
+        <class>io.dyakonoff.cargoload.entity.CargoItemPosition</class>
+        <class>io.dyakonoff.cargoload.entity.ShipLoadingScheme</class>
     </persistence-unit>
 </persistence>

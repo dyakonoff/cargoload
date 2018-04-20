@@ -10,6 +10,8 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
 
 @NamePattern("%s * %s|product,productQuantity")
 @Table(name = "CARGOLOAD_CARGO_SKU")
@@ -22,6 +24,7 @@ public class CargoSku extends StandardEntity {
     @JoinColumn(name = "PRODUCT_ID")
     protected Product product;
 
+    @DecimalMin("0")
     @NotNull
     @Column(name = "PRODUCT_QUANTITY", nullable = false)
     protected BigDecimal productQuantity;
@@ -33,12 +36,18 @@ public class CargoSku extends StandardEntity {
     @Column(name = "PRICE", nullable = false)
     protected BigDecimal price;
 
+    @DecimalMax("100")
+    @DecimalMin("0")
     @Column(name = "CONTAINER_WIDTH")
     protected BigDecimal containerWidth;
 
+    @DecimalMax("500")
+    @DecimalMin("0")
     @Column(name = "CONTAINER_DEPTH")
     protected BigDecimal containerDepth;
 
+    @DecimalMax("500")
+    @DecimalMin("0")
     @Column(name = "CONTAINER_HEIGHT")
     protected BigDecimal containerHeight;
 

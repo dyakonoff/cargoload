@@ -7,6 +7,7 @@ import javax.validation.constraints.NotNull;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
 import java.math.BigDecimal;
+import javax.validation.constraints.DecimalMin;
 
 @NamePattern("%s|name")
 @Table(name = "CARGOLOAD_PRODUCT")
@@ -22,10 +23,12 @@ public class Product extends StandardEntity {
     @Column(name = "MEASURE", nullable = false)
     protected Integer measure;
 
+    @DecimalMin(message = "Weight per unit can not be negative", value = "0")
     @NotNull
     @Column(name = "WEIGHT_PER_UNIT", nullable = false)
     protected BigDecimal weightPerUnit;
 
+    @DecimalMin(message = "Price can't be negative", value = "0")
     @Column(name = "PRICE_PER_UNIT")
     protected BigDecimal pricePerUnit;
 

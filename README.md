@@ -35,6 +35,13 @@ _(Good example of bad words filter could be found [here](https://gist.github.com
 * Bay number should be positive.
 * Maximum Load of the bay should not exceed the ship's carrying capacity.
 
+### Cargo Item Position
+* Count to load should be 1 or greater
+
+### Cargo loading scheme
+
+
+
 
 
 
