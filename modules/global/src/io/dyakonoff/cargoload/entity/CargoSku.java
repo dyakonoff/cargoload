@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotNull;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
@@ -27,6 +28,7 @@ public class CargoSku extends StandardEntity {
     @DecimalMin("0")
     @NotNull
     @Column(name = "PRODUCT_QUANTITY", nullable = false)
+    @AssertTrue()
     protected BigDecimal productQuantity;
 
     @Column(name = "QTY_AVALIABLE_TO_BUY")
@@ -50,6 +52,7 @@ public class CargoSku extends StandardEntity {
     @DecimalMin("0")
     @Column(name = "CONTAINER_HEIGHT")
     protected BigDecimal containerHeight;
+
 
     public void setContainerWidth(BigDecimal containerWidth) {
         this.containerWidth = containerWidth;

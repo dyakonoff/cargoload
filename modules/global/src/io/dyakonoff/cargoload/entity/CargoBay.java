@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.math.BigDecimal;
 import javax.persistence.Column;
+import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotNull;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
@@ -13,6 +14,9 @@ import com.haulmont.cuba.core.global.DeletePolicy;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 @NamePattern("%s|name")
 @Table(name = "CARGOLOAD_CARGO_BAY")
@@ -31,6 +35,9 @@ public class CargoBay extends StandardEntity {
     @JoinColumn(name = "SHIP_ID")
     protected Ship ship;
 
+    @Digits(integer = 3, fraction = 0)
+    @Max(100)
+    @Min(0)
     @Column(name = "BAY_NUMBER", unique = true)
     protected Integer bayNumber;
 

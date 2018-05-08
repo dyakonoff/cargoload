@@ -12,4 +12,31 @@
         <property name="ship"
                   view="_minimal"/>
     </view>
+    <view class="io.dyakonoff.cargoload.entity.ShipLoadingScheme"
+          extends="_local"
+          name="shipLoadingScheme-detailed-view">
+        <property name="itemPositions"
+                  view="_minimal">
+            <property name="sku"
+                      view="_minimal">
+                <property name="qtyAvaliableToBuy"/>
+                <property name="price"/>
+                <property name="containerWidth"/>
+                <property name="containerDepth"/>
+                <property name="containerHeight"/>
+            </property>
+            <property name="bay"
+                      view="_minimal">
+                <property name="ship"
+                          view="_minimal">
+                    <property name="carryingCapacity"/>
+                </property>
+                <property name="bayNumber"/>
+                <property name="maxLoad"/>
+                <property name="bayArea"/>
+                <property name="foreAndAftPosition"/>
+                <property name="athwartshipPosition"/>
+            </property>
+        </property>
+    </view>
 </views>

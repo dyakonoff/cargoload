@@ -7,6 +7,9 @@ import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
+import java.util.Date;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @NamePattern("%s (%s)|name,shipType")
 @Table(name = "CARGOLOAD_SHIP")
@@ -24,6 +27,19 @@ public class Ship extends StandardEntity {
     @NotNull
     @Column(name = "CARRYING_CAPACITY", nullable = false)
     protected BigDecimal carryingCapacity;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "BUILD_YEAR")
+    protected Date buildYear;
+
+    public void setBuildYear(Date buildYear) {
+        this.buildYear = buildYear;
+    }
+
+    public Date getBuildYear() {
+        return buildYear;
+    }
+
 
     public void setCarryingCapacity(BigDecimal carryingCapacity) {
         this.carryingCapacity = carryingCapacity;

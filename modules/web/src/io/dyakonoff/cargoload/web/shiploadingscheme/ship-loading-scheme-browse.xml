@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="io.dyakonoff.cargoload.web.shiploadingscheme.ShipLoadingSchemeBrowse"
+        focusComponent="shipLoadingSchemesTable"
+        lookupComponent="shipLoadingSchemesTable"
+        messagesPack="io.dyakonoff.cargoload.web.shiploadingscheme">
+    <dsContext>
+        <groupDatasource id="shipLoadingSchemesDs"
+                         class="io.dyakonoff.cargoload.entity.ShipLoadingScheme"
+                         view="_local">
+            <query>
+                <![CDATA[select e from cargoload$ShipLoadingScheme e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="shipLoadingSchemesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="shipLoadingSchemesTable"
+                datasource="shipLoadingSchemesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="shipLoadingSchemesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+            </columns>
+            <rows datasource="shipLoadingSchemesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="shipLoadingSchemesTable.create"/>
+                <button id="editBtn"
+                        action="shipLoadingSchemesTable.edit"/>
+                <button id="removeBtn"
+                        action="shipLoadingSchemesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

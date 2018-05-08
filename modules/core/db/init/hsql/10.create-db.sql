@@ -12,6 +12,7 @@ create table CARGOLOAD_SHIP (
     NAME varchar(255) not null,
     SHIP_TYPE varchar(255),
     CARRYING_CAPACITY decimal(19, 2) not null,
+    BUILD_YEAR date,
     --
     primary key (ID)
 )^

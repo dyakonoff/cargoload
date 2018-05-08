@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
         caption="msg://editorCaption"
-        class="io.dyakonoff.cargoload.web.ship.ShipEdit"
-        datasource="shipDs"
+        class="io.dyakonoff.cargoload.web.shiploadingscheme.ShipLoadingSchemeEdit"
+        datasource="shipLoadingSchemeDs"
         focusComponent="fieldGroup"
-        messagesPack="io.dyakonoff.cargoload.web.ship">
+        messagesPack="io.dyakonoff.cargoload.web.shiploadingscheme">
     <dsContext>
-        <datasource id="shipDs"
-                    class="io.dyakonoff.cargoload.entity.Ship"
+        <datasource id="shipLoadingSchemeDs"
+                    class="io.dyakonoff.cargoload.entity.ShipLoadingScheme"
                     view="_local"/>
     </dsContext>
-    <dialogMode forceDialog="true"
-                height="AUTO"
-                width="600"/>
+    <dialogMode height="600"
+                width="800"/>
     <layout expand="windowActions"
             spacing="true">
         <fieldGroup id="fieldGroup"
-                    datasource="shipDs">
+                    datasource="shipLoadingSchemeDs">
             <column width="250px">
                 <field property="name"/>
-                <field property="shipType"/>
-                <field caption="Carrying capacity"
-                       property="carryingCapacity"/>
-                <field property="buildYear"/>
             </column>
         </fieldGroup>
         <frame id="windowActions"
                screen="editWindowActions"/>
+        <twinColumn/>
     </layout>
 </window>

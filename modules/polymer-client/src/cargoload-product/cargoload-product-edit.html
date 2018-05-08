@@ -1,0 +1,67 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html"> 
+<link rel="import" href="../../bower_components/paper-toast/paper-toast.html"> 
+<link rel="import" href="../../bower_components/paper-button/paper-button.html"> 
+<link rel="import" href="../../bower_components/paper-card/paper-card.html"> 
+<link rel="import" href="../../bower_components/cuba-app/cuba-localize-behavior.html"> 
+<link rel="import" href="../../bower_components/cuba-ui/cuba-entity-edit-view-behavior.html"> 
+<link rel="import" href="../../bower_components/cuba-data/cuba-entity.html"> 
+<link rel="import" href="../../bower_components/cuba-form/cuba-entity-form.html"> 
+<link rel="import" href="../../bower_components/cuba-styles/cuba-styles.html"> 
+<link rel="import" href="../../bower_components/paper-input/paper-input.html"> 
+<link rel="import" href="../shared-styles.html"> 
+<dom-module id="cargoload-product-edit"> 
+  <template> 
+    <style include="cuba-styles"></style> 
+    <style include="shared-styles"></style> 
+    <style>
+      paper-card {
+        display: block;
+      }
+    </style> 
+    <cuba-entity entity-name="cargoload$Product" entity-id="[[entityId]]" view="_local" data="{{entity}}"></cuba-entity> 
+    <cuba-entity-form id="form" entity-name="cargoload$Product" entity="{{entity}}" on-cuba-form-response="_onSuccess" on-cuba-form-error="_onError" server-errors="{{serverErrors}}"> 
+      <paper-card> 
+        <div class="card-content"> 
+          <paper-input value="{{entity.name}}" label="[[msg('cargoload$Product.name')]]" required maxlength="100" error-message="[[serverErrors.name]]" invalid="[[_isInvalid(serverErrors.name)]]"> 
+          </paper-input> 
+          <vaadin-combo-box label="[[msg('cargoload$Product.measure')]]" items="[[enumValues('io.dyakonoff.cargoload.entity.ProductMeasure')]]" value="{{entity.measure}}" error-message="[[serverErrors.measure]]" invalid="[[_isInvalid(serverErrors.measure)]]" required> 
+          </vaadin-combo-box> 
+          <paper-input type="number" value="{{entity.weightPerUnit}}" label="[[msg('cargoload$Product.weightPerUnit')]]" step="any" required error-message="[[serverErrors.weightPerUnit]]" invalid="[[_isInvalid(serverErrors.weightPerUnit)]]"> 
+          </paper-input> 
+          <paper-input type="number" value="{{entity.pricePerUnit}}" label="[[msg('cargoload$Product.pricePerUnit')]]" step="any" error-message="[[serverErrors.pricePerUnit]]" invalid="[[_isInvalid(serverErrors.pricePerUnit)]]"> 
+          </paper-input> 
+        </div> 
+        <div class="card-actions"> 
+          <paper-button on-tap="_delete" hidden$="[[!entityId]]">
+             [[msg('Delete')]] 
+          </paper-button> 
+          <paper-button on-tap="_cancel">
+             [[msg('Cancel')]] 
+          </paper-button> 
+          <paper-button on-tap="_save">
+             [[msg('Save')]] 
+          </paper-button> 
+        </div> 
+      </paper-card> 
+    </cuba-entity-form> 
+    <paper-toast id="errorMessage" horizontal-align="right">
+      [[msg('Failed to save')]]
+    </paper-toast> 
+  </template> 
+  <script>
+    {
+      /**
+       * @extends {Polymer.Element}
+       * @appliesMixin CubaLocalizeBehavior
+       * @appliesMixin CubaEntityEditViewBehavior
+       */
+      class CargoloadProductEdit extends Polymer.mixinBehaviors([CubaLocalizeBehavior, CubaEntityEditViewBehavior], Polymer.Element) {
+
+        static get is() { return 'cargoload-product-edit'; }
+
+      }
+
+      customElements.define(CargoloadProductEdit.is, CargoloadProductEdit);
+    }
+  </script> 
+</dom-module>

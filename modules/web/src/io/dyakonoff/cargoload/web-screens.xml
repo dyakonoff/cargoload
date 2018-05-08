@@ -7,4 +7,8 @@
             template="io/dyakonoff/cargoload/web/cargobay/cargo-bay-browse.xml"/>
     <screen id="cargoload$Product.browse"
             template="io/dyakonoff/cargoload/web/product/product-browse.xml"/>
+    <screen id="cargoload$ShipLoadingScheme.browse"
+            template="io/dyakonoff/cargoload/web/shiploadingscheme/ship-loading-scheme-browse.xml"/>
+    <screen id="cargoload$ShipLoadingScheme.edit"
+            template="io/dyakonoff/cargoload/web/shiploadingscheme/ship-loading-scheme-edit.xml"/>
 </screen-config>

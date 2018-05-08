@@ -7,5 +7,6 @@
               screen="cargoload$Ship.edit"/>
         <item screen="cargoload$CargoBay.browse"/>
         <item screen="cargoload$Product.browse"/>
+        <item screen="cargoload$ShipLoadingScheme.browse"/>
     </menu>
 </menu-config>
